@@ -54,3 +54,13 @@ export const flyAndScale = (
 		easing: cubicOut
 	};
 };
+
+export const formatDate = (date: Date) => {
+	return new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(
+		new Date(date)
+	);
+};
+
+export const capitalize = (str: string) => {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+};

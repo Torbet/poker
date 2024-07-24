@@ -12,7 +12,7 @@
 </script>
 
 <header class="flex items-center justify-between p-4">
-	<Button href="/" variant="ghost" class="text-xl font-bold">Poker</Button>
+	<Button href="/" variant="ghost" class="mr-auto text-xl font-bold">Poker</Button>
 	<Sheet.Root bind:open>
 		<Sheet.Trigger>
 			<Button variant="ghost" size="icon">
@@ -30,14 +30,16 @@
 						<p class="text-sm font-medium leading-none">{user.username}</p>
 						<p class="text-sm text-muted-foreground">{user.email}</p>
 					</div>
-					<div class="ml-auto font-medium">{user.chips}</div>
+					<div class="ml-auto font-semibold">{user.chips}</div>
 				</div>
+				<Button href="/play" variant="ghost">Play</Button>
 			{:else}
-				<Button href="login" variant="default">Login</Button>
-				<Button href="signup" variant="secondary">Sign Up</Button>
+				<Button href="/login" variant="default">Login</Button>
+				<Button href="/signup" variant="secondary">Sign Up</Button>
 			{/if}
+
 			{#if user}
-				<Button href="logout" variant="destructive" class="mt-auto">Logout</Button>
+				<Button href="/logout" variant="destructive" class="mt-auto">Logout</Button>
 			{/if}
 		</Sheet.Content>
 	</Sheet.Root>
